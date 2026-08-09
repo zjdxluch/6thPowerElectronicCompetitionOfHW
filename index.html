@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第六届华为大学生电力电子创新大赛</title>
+  <script src="./第六届华为大学生电力电子创新大赛_files/saved_resource"></script>
+  <script src="./第六届华为大学生电力电子创新大赛_files/lucide@latest"></script>
+  <style>
+    body {
+      background-color: #f8fafc;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    .glow-card {
+      transition: all 0.2s ease;
+    }
+    .glow-card:hover {
+      box-shadow: 0 12px 24px -8px rgba(0,0,0,0.08), 0 0 0 1px rgba(255,255,255,0.6);
+    }
+    .snap-x { scroll-snap-type: x mandatory; }
+    .snap-start { scroll-snap-align: start; }
+    .scroll-mask {
+      transition: opacity 0.2s ease;
+    }
+    @keyframes pulse-arrow {
+      0%, 100% { opacity: 0.4; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.15); }
+    }
+    .arrow-pulse {
+      animation: pulse-arrow 1.2s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="antialiased text-gray-800">
+  <div class="flex flex-col min-h-screen relative pb-28">
+    <!-- ========== 顶部主KV区域 ========== -->
+    <div class="w-full px-3 sm:px-4 pt-4 sm:pt-5 pb-2 flex-shrink-0">
+      <div class="max-w-6xl mx-auto rounded-3xl shadow-xl overflow-hidden glow-card bg-white">
+        <img src="./第六届华为大学生电力电子创新大赛_files/主KV图片.png" alt="主KV" class="w-full h-auto object-cover block">
+      </div>
+    </div>
+
+    <!-- ========== 视图容器 (SPA切换) ========== -->
+    <main class="flex-1 w-full px-4 sm:px-5 md:px-6 max-w-6xl mx-auto pt-3">
+      <!-- ===== 视图1: 赛事介绍 ===== -->
+      <div id="view-intro" class="view-panel space-y-5">
+        <!-- 阶段一 : 浅绿色系 -->
+        <div class="bg-white rounded-2xl shadow-md border-l-highlight border-l-green-300 overflow-hidden glow-card">
+          <div class="p-5">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="bg-green-100 text-green-600 p-2.5 rounded-xl shadow-sm">
+                <i data-lucide="package" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-xl text-gray-800">赛题介绍</h3>
+              </div>
+            </div>
+            <div class="pl-1 text-gray-700">
+              <p>  “华为大学生电力电子创新大赛”是华为数字能源面向大学生打造的数字技术和电力电子技术融合创新的赛事。“融合数字技术和电力电子技术，发展清洁能源与能源数字化，推动能源革命，共建绿色美好未来。”是华为数字能源对外传递的理念，诚邀全球高校的精英们加入，一起探索数字技术与电力电子技术的融合创新，共建绿色美好未来。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 阶段二 : 绿色系 -->
+        <div class="bg-white rounded-2xl shadow-md border-l-highlight border-l-green-400 overflow-hidden glow-card">
+          <div class="p-5">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="bg-green-100 text-green-600 p-2.5 rounded-xl shadow-sm">
+                <i data-lucide="trophy" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-xl text-gray-800">赛事旅程</h3>
+              </div>
+            </div>
+            <div class="pl-1 space-y-1.5 text-gray-700">
+              <div class="flex items-center gap-2"><i data-lucide="calendar" class="w-4 h-4 text-green-400"></i><span>2025年11月10日 赛题发布&报名启动</span></div>
+              <div class="flex items-center gap-2"><i data-lucide="calendar" class="w-4 h-4 text-green-400"></i><span>2026年1月20日 报名截止</span></div>
+              <div class="flex items-center gap-2"><i data-lucide="calendar" class="w-4 h-4 text-green-400"></i><span>2026年1月12日 初赛名单公布</span></div>
+              <div class="flex items-center gap-2"><i data-lucide="calendar" class="w-4 h-4 text-green-400"></i><span>2026年3月11日 初赛作品提交</span></div>
+              <div class="flex items-center gap-2"><i data-lucide="calendar" class="w-4 h-4 text-green-400"></i><span>2026年3月26日 入围总决赛&复活赛名单公布</span></div>
+              <div class="flex items-center gap-2"><i data-lucide="calendar" class="w-4 h-4 text-green-400"></i><span>2026年5月27日 复活赛评审&入围总决赛名单公布</span></div>
+              <div class="flex items-center gap-2"><i data-lucide="calendar" class="w-4 h-4 text-green-400"></i><span>2026年8月3日 总决赛作品提交</span></div>
+              <div class="flex items-center gap-2"><i data-lucide="calendar" class="w-4 h-4 text-green-400"></i><span>2026年8月4日 总决赛晋级名单公布</span></div>
+			  <div class="flex items-center gap-2"><i data-lucide="calendar" class="w-4 h-4 text-green-400"></i><span>2026年8月13日 现场总决赛</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== 视图2: 参赛指南 ===== -->
+      <div id="view-agenda" class="view-panel space-y-5 hidden">
+        <!-- 新增 : 赛题介绍 -->
+        <div class="bg-white rounded-2xl shadow-md border-l-highlight border-l-green-300 overflow-hidden glow-card">
+          <div class="p-5">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="bg-green-100 text-green-600 p-2.5 rounded-xl shadow-sm">
+                <i data-lucide="zap" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-xl text-gray-800">赛题介绍</h3>
+              </div>
+            </div>
+            <div class="pl-1 text-gray-700 whitespace-pre-line">
+              <p>赛题一：三端口功率变换器设计</p>
+              <p>导向：以高密高效、暂态高过载光储功率变换为核心，鼓励拓扑、工艺和算法创新。</p>
+			  <p>赛题二：微网经济性与韧性协同优化策略设计与仿真验证</p>
+              <p>导向：以高精度高效率求解、国产化为核心，鼓励新型电力系统建模技术创新，同时探索微电网韧性与经济性协同控制的技术路径。</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 阶段三 : 青色系 + 横向滚动Tab -->
+        <div class="bg-white rounded-2xl shadow-md border-l-highlight border-l-cyan-500 overflow-hidden glow-card">
+          <div class="p-5 pb-3">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="bg-cyan-100 text-cyan-600 p-2.5 rounded-xl shadow-sm">
+                <i data-lucide="calendar" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-xl text-gray-800">行程安排</h3>
+              </div>
+            </div>
+			
+            <div class="relative flex items-center gap-2">
+                <div id="arrow-left" class="flex-shrink-0 self-start" style="margin-top: 0px;">
+                <span class="text-cyan-500 text-2xl font-bold arrow-pulse">‹</span>
+              </div>
+              <div class="flex gap-1.5 overflow-x-auto scrollbar-hide pb-2 px-1 snap-x flex-1" id="schedule-tabs">
+                <button data-tab="day12" class="tab-btn whitespace-nowrap px-4 py-2 rounded-full text-sm font-semibold transition-all bg-gray-100 text-gray-700 snap-start">📅 8月6-11日</button>
+                <button data-tab="day13" class="tab-btn whitespace-nowrap px-4 py-2 rounded-full text-sm font-semibold transition-all bg-gray-100 text-gray-700 snap-start">📅 8月12日</button>
+                <button data-tab="day14" class="tab-btn whitespace-nowrap px-4 py-2 rounded-full text-sm font-semibold transition-all bg-gray-100 text-gray-700 snap-start">📅 8月13日</button>
+                <button data-tab="day15" class="tab-btn whitespace-nowrap px-4 py-2 rounded-full text-sm font-semibold transition-all bg-gray-100 text-gray-700 snap-start">📅 8月14日</button>
+              </div>
+                <div id="arrow-right" class="flex-shrink-0 self-start" style="margin-top: 0px;">
+                <span class="text-cyan-500 text-2xl font-bold arrow-pulse">›</span>
+              </div>
+            </div>
+			
+            <div class="flex justify-center gap-2 mt-3" id="schedule-dots">
+              <span class="w-2 h-2 rounded-full bg-cyan-500 transition-all" data-dot="day12"></span>
+              <span class="w-2 h-2 rounded-full bg-gray-300 transition-all" data-dot="day13"></span>
+              <span class="w-2 h-2 rounded-full bg-gray-300 transition-all" data-dot="day14"></span>
+              <span class="w-2 h-2 rounded-full bg-gray-300 transition-all" data-dot="day15"></span>
+            </div>
+          </div>
+          <div class="px-5 pb-5 pt-1">
+            <div id="tab-day12" class="tab-content-panel space-y-3 hidden">
+              <div class="pl-1 text-gray-700">
+				<img src="./第六届华为大学生电力电子创新大赛_files/行程安排-1.png" alt="主KV" class="w-full h-auto object-cover block">
+              </div>
+            </div>
+            <div id="tab-day13" class="tab-content-panel space-y-3 hidden">
+              <div class="pl-1 text-gray-700">
+				<img src="./第六届华为大学生电力电子创新大赛_files/行程安排-2.png" alt="主KV" class="w-full h-auto object-cover block">
+              </div>
+            </div>
+            <div id="tab-day14" class="tab-content-panel space-y-3 hidden">
+              <div class="pl-1 text-gray-700">
+                <img src="./第六届华为大学生电力电子创新大赛_files/行程安排-3.png" alt="主KV" class="w-full h-auto object-cover block">
+              </div>
+            </div>
+            <div id="tab-day15" class="tab-content-panel space-y-3 hidden">
+              <div class="pl-1 text-gray-700">
+                <img src="./第六届华为大学生电力电子创新大赛_files/行程安排-4.png" alt="主KV" class="w-full h-auto object-cover block">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 阶段四 : 蓝色系 -->
+        <div class="bg-white rounded-2xl shadow-md border-l-highlight border-l-blue-400 overflow-hidden glow-card">
+          <div class="p-5">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="bg-blue-100 text-blue-600 p-2.5 rounded-xl shadow-sm">
+                <i data-lucide="clipboard-list" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-xl text-gray-800">答辩议程</h3>
+              </div>
+            </div>
+            <div class="pl-1 text-gray-700">
+              <img src="./第六届华为大学生电力电子创新大赛_files/答辩议程-1.png" alt="主KV" class="w-full h-auto object-cover block">
+            </div>
+          </div>
+        </div>
+
+        <!-- 阶段五 : 紫色系 -->
+        <div class="bg-white rounded-2xl shadow-md border-l-highlight border-l-purple-400 overflow-hidden glow-card">
+          <div class="p-5">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="bg-purple-100 text-purple-600 p-2.5 rounded-xl shadow-sm">
+                <i data-lucide="building" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-xl text-gray-800">酒店信息</h3>
+              </div>
+            </div>
+            <div class="pl-1 text-gray-700 space-y-1">
+              <p>1、入住酒店地址：夏阳湖皇冠假日酒店</p>
+              <p>2、酒店含自助早餐，营业时间：06:00-10:00</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 阶段六 : 橙色系 -->
+        <div class="bg-white rounded-2xl shadow-md border-l-highlight border-l-orange-400 overflow-hidden glow-card">
+          <div class="p-5">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="bg-orange-100 text-orange-600 p-2.5 rounded-xl shadow-sm">
+                <i data-lucide="car" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-xl text-gray-800">车辆接送</h3>
+              </div>
+            </div>
+            <div class="pl-1 text-gray-700">
+              <img src="./第六届华为大学生电力电子创新大赛_files/车辆接送-1.png" alt="主KV" class="w-full h-auto object-cover block">
+            </div>
+          </div>
+        </div>
+
+        <!-- 阶段七 : 绿色系 -->
+        <div class="bg-white rounded-2xl shadow-md border-l-highlight border-l-green-400 overflow-hidden glow-card">
+          <div class="p-5">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="bg-green-100 text-green-600 p-2.5 rounded-xl shadow-sm">
+                <i data-lucide="cloud-sun" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-xl text-gray-800">天气预报</h3>
+              </div>
+            </div>
+            <div class="pl-1 text-gray-700">
+              <img src="./第六届华为大学生电力电子创新大赛_files/天气预报-1.png" alt="主KV" class="w-full h-auto object-cover block">
+            </div>
+          </div>
+        </div>
+
+        <!-- 阶段八 : 灰色系 -->
+        <div class="bg-white rounded-2xl shadow-md border-l-highlight border-l-gray-400 overflow-hidden glow-card">
+          <div class="p-5">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="bg-gray-100 text-gray-600 p-2.5 rounded-xl shadow-sm">
+                <i data-lucide="alert-triangle" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-xl text-gray-800">温馨提醒</h3>
+              </div>
+            </div>
+            <div class="pl-1 text-gray-700 space-y-1">
+              <p>1、请随身携带身份证及会议证并全程佩戴，保持手机畅通；</p>
+              <p>2、近期天气多变，建议穿着舒适运动休闲装，备好换洗衣物、防晒用品及薄外套（应对室内低温）；</p>
+              <p>3、请配合现场安排，避免单独行动，确保人身平安；</p>
+              <p>4、严禁代刷卡、尾随进入办公区地库；禁止进入施工区及有危险标识区域；</p>
+              <p>5、园区内含轨道、湖泊、电井等危险设施，请务必远离，谨防跌落、溺水及触电等事故；</p>
+              <p>6、遵守园区规定，爱护公物，保持环境整洁，文明就餐；</p>
+			  <p>7、遇到任何医疗应急问题，请立即拨打练秋湖B12-1F-17R急救调度中心电话：021-38905120或告知工作人员；</p>
+			  <p>8、如遇异常，您可联系我们的会务接口人：肖雅丹/13925710305。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== 视图3: 活动地图 ===== -->
+      <div id="view-map" class="view-panel space-y-6 hidden">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold text-gray-800">现场地图</h2>
+          <p class="text-gray-500 mt-1">找到你最想去的游玩点-点击对应项目查看游戏规则</p>
+        </div>
+        <div class="rounded-2xl overflow-hidden shadow-md bg-white">
+          <img src="./第六届华为大学生电力电子创新大赛_files/布局图.jpg" alt="活动布局图" class="w-full h-auto object-contain">
+        </div>
+        <div class="grid grid-cols-2 gap-3 sm:gap-4" id="map-card-grid"></div>
+      </div>
+
+      <!-- ===== 视图4: 照片直播 ===== -->
+      <div id="view-album" class="view-panel space-y-6 hidden">
+        <div class="text-center">
+          <h2 class="text-3xl font-bold text-gray-800">照片直播</h2>
+          <p class="text-gray-500 mt-1">点击跳转照片直播</p>
+        </div>
+        <div class="bg-white p-5 rounded-2xl shadow-md flex items-center gap-4 border-l-4 border-l-sky-500 cursor-pointer hover:shadow-lg transition glow-card" id="albumLink">
+          <i data-lucide="external-link" class="w-7 h-7 text-sky-500"></i>
+          <span class="text-lg font-medium text-gray-800">点击跳转照片直播</span>
+          <i data-lucide="chevron-right" class="ml-auto text-gray-400 w-5 h-5"></i>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="p-3 bg-white rounded-2xl shadow-md">
+            <img src="./第六届华为大学生电力电子创新大赛_files/直播二维码.jpg" alt="活动二维码" class="w-52 h-52 object-cover rounded-xl">
+          </div>
+          <p class="text-gray-500 text-xs mt-3">扫码查看更多精彩瞬间</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- 底部悬浮导航条 (四个Tab居中) -->
+  <nav class="bottom-nav fixed bottom-0 left-0 right-0 flex justify-center items-center py-2 px-4 sm:px-6 z-40">
+    <div class="flex gap-4 sm:gap-8">
+      <button data-view="intro" class="nav-btn flex flex-col items-center py-2 px-6 rounded-2xl transition-all text-indigo-600">
+        <i data-lucide="info" class="w-6 h-6 mb-0.5"></i>
+        <span class="text-xs font-semibold">赛事介绍</span>
+      </button>
+      <button data-view="agenda" class="nav-btn flex flex-col items-center py-2 px-6 rounded-2xl transition-all text-gray-500">
+        <i data-lucide="calendar" class="w-6 h-6 mb-0.5"></i>
+        <span class="text-xs font-semibold">参赛指南</span>
+      </button>
+      <button data-view="map" class="nav-btn flex flex-col items-center py-2 px-6 rounded-2xl transition-all text-gray-500">
+        <i data-lucide="map" class="w-6 h-6 mb-0.5"></i>
+        <span class="text-xs font-semibold">活动地图</span>
+      </button>
+      <button data-view="album" class="nav-btn flex flex-col items-center py-2 px-6 rounded-2xl transition-all text-gray-500">
+        <i data-lucide="image" class="w-6 h-6 mb-0.5"></i>
+        <span class="text-xs font-semibold">照片直播</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- 游戏规则弹窗 (泡泡框) -->
+  <div id="rule-modal" class="fixed inset-0 z-50 items-center justify-center modal-overlay hidden">
+    <div class="bubble-modal bg-white p-6 mx-4 shadow-2xl relative">
+      <button id="close-modal" class="absolute top-3 right-3 text-gray-400 hover:text-gray-600 transition">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+      <h3 id="modal-title" class="text-xl font-bold text-gray-800 mb-3">葱容不迫救援队</h3>
+      <p id="modal-content" class="text-gray-700 leading-relaxed whitespace-pre-line">两人站在指定位置，使用长筷子夹取蔬果。限时1分钟内，成功拯救5个池内蔬果并放入篮中，即可获得一枚印章。</p>
+    </div>
+  </div>
+
+  <script>
+    // ============================================================
+    // 1. SPA 视图切换
+    // ============================================================
+    function switchView(viewName) {
+      document.querySelectorAll('.view-panel').forEach(function(p) {
+        p.classList.add('hidden');
+      });
+      var target=  document.getElementById('view-' + viewName);
+      if (target) target.classList.remove('hidden');
+      document.querySelectorAll('.nav-btn').forEach(function(btn) {
+        var isActive = btn.dataset.view === viewName;
+        btn.classList.toggle('text-indigo-600', isActive);
+        btn.classList.toggle('text-gray-500', !isActive);
+      });
+    }
+
+    document.querySelectorAll('.nav-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        switchView(btn.dataset.view);
+      });
+    });
+
+    // ============================================================
+    // 2. 行程安排 Tab 切换 (agenda)
+    // ============================================================
+    var scheduleTabs = document.querySelectorAll('.tab-btn');
+    var schedulePanels = {
+      day12: document.getElementById('tab-day12'),
+      day13: document.getElementById('tab-day13'),
+      day14: document.getElementById('tab-day14'),
+      day15: document.getElementById('tab-day15')
+    };
+
+    function switchScheduleTab(tabId) {
+      Object.values(schedulePanels).forEach(function(p) {
+        if (p) p.classList.add('hidden');
+      });
+      if (schedulePanels[tabId]) schedulePanels[tabId].classList.remove('hidden');
+      scheduleTabs.forEach(function(btn) {
+        var isActive = btn.dataset.tab === tabId;
+        btn.classList.toggle('bg-cyan-600', isActive);
+        btn.classList.toggle('text-white', isActive);
+        btn.classList.toggle('shadow-md', isActive);
+        btn.classList.toggle('shadow-cyan-200', isActive);
+        btn.classList.toggle('bg-gray-100', !isActive);
+        btn.classList.toggle('text-gray-700', !isActive);
+      });
+      document.querySelectorAll('[data-dot]').forEach(function(dot) {
+        var isActive = dot.dataset.dot === tabId;
+        dot.classList.toggle('bg-cyan-500', isActive);
+        dot.classList.toggle('bg-gray-300', !isActive);
+        dot.classList.toggle('w-3', isActive);
+        dot.classList.toggle('w-2', !isActive);
+        dot.classList.toggle('h-3', isActive);
+        dot.classList.toggle('h-2', !isActive);
+      });
+      lucide.createIcons();
+    }
+
+    scheduleTabs.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        switchScheduleTab(btn.dataset.tab);
+      });
+    });
+
+    // ============================================================
+    // 3. 地图卡片渲染 (map)
+    // ============================================================
+    var gameRules = {
+      "讯息采集站": "有序排队站至机器指定拍摄区域，调整好拍摄姿势，触碰屏幕启动拍摄，AI自动成像并生成专属报纸即为闯关手册。",
+      "热浪突围": "每人三次机会，玩家在指定点位将足球踢入场地规定圆圈内即可成功；累计成功踢入2次即可通关。",
+      "清凉一击": "每人三次机会，玩家手持道具锤，将现场展示的烦恼，负面关键词道具击飞，成功击飞1个中间道具后，保证空中道具全程不落地，不触碰边界障碍，完成解压闯关挑战。",
+      "激浪吹球": '玩家利用气流吹动水盆中的乒乓球，将所有球吹出水盆，并落入前方收纳筐内即可通关。',
+      "光团同行": '四人共持长杆，同步越障，全程脚步落地，一人落地即失败，需从起点处重新开始，直至全员越过终点线，即为挑战成功。',
+	  "隐藏任务": "寻找戴袖标的神秘人，解锁隐藏任务，把额外惊喜带回家。",
+    };
+
+    var mapCards = [
+      { name: "讯息采集站", subtitle: "拍摄任务", borderColor: "border-l-green-500", iconColor: "text-green-600", icon: "salad" },
+      { name: "热浪突围", subtitle: "踢球", borderColor: "border-l-orange-400", iconColor: "text-orange-500", icon: "target" },
+      { name: "清凉一击", subtitle: "巨锤敲击", borderColor: "border-l-purple-500", iconColor: "text-purple-500", icon: "grid-2x2" },
+      { name: "激浪吹球", subtitle: "趣味乒乓球", borderColor: "border-l-yellow-400", iconColor: "text-yellow-600", icon: "banana" },
+      { name: "光团同行", subtitle: "穿越火线", borderColor: "border-l-pink-400", iconColor: "text-pink-500", icon: "flame" },
+	  { name: "隐藏任务", subtitle: "寻找神秘人", borderColor: "border-l-red-500", iconColor: "text-red-500", icon: "candy" },
+    ];
+
+    var mapGrid = document.getElementById('map-card-grid');
+    mapCards.forEach(function(card) {
+      var cardDiv = document.createElement('div');
+      cardDiv.className = 'bg-white p-3 rounded-xl shadow-sm flex items-center gap-3 border-l-4 ' + card.borderColor + ' cursor-pointer hover:shadow-md transition';
+      cardDiv.setAttribute('data-game', card.name);
+
+      var iconHTML = '';
+      if (card.isEmoji) {
+        iconHTML = '<span class="text-2xl">' + card.icon + '</span>';
+      } else {
+        iconHTML = '<i data-lucide="' + card.icon + '" class="w-5 h-5 ' + card.iconColor + '"></i>';
+      }
+
+      cardDiv.innerHTML = iconHTML + '<span class="text-sm font-medium">' + card.name + ' <span class="text-gray-500 text-xs block">' + card.subtitle + '</span></span>';
+      mapGrid.appendChild(cardDiv);
+    });
+
+    // ============================================================
+    // 4. 游戏规则弹窗 (map)
+    // ============================================================
+    var modal = document.getElementById('rule-modal');
+    var modalTitle = document.getElementById('modal-title');
+    var modalContent = document.getElementById('modal-content');
+    var closeBtn = document.getElementById('close-modal');
+
+    function openRuleModal(gameName) {
+      var rule = gameRules[gameName] || '暂无详细规则';
+      modalTitle.textContent = gameName;
+      modalContent.textContent = rule;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      lucide.createIcons();
+    }
+
+    function closeRuleModal() {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+    }
+
+    mapGrid.addEventListener('click', function(e) {
+      var card = e.target.closest('[data-game]');
+      if (card) {
+        openRuleModal(card.getAttribute('data-game'));
+      }
+    });
+
+    closeBtn.addEventListener('click', closeRuleModal);
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal) closeRuleModal();
+    });
+
+    // ============================================================
+    // 5. 云相册跳转 (album)
+    // ============================================================
+    var cloudAlbumUrl = 'https://m.alltuu.com/album/8e4ac89912b7a8c27ef1674e15e1d222/?menu=live';
+    var albumLink = document.getElementById('albumLink');
+    if (albumLink) {
+      albumLink.addEventListener('click', function() {
+        window.open(cloudAlbumUrl, '_blank');
+      });
+    }
+
+    // ============================================================
+    // 6. 初始化
+    // ============================================================
+    lucide.createIcons();
+    switchView('intro');
+    switchScheduleTab('day15');
+
+    // ============================================================
+    // 7. 行程Tab滚动箭头控制
+    // ============================================================
+    var scheduleTabsContainer = document.getElementById('schedule-tabs');
+    var leftArrow = document.getElementById('arrow-left');
+    var rightArrow = document.getElementById('arrow-right');
+
+    function updateScrollArrows() {
+      if (!scheduleTabsContainer || !leftArrow || !rightArrow) return;
+      var maxScroll = scheduleTabsContainer.scrollWidth - scheduleTabsContainer.clientWidth;
+      var currentScroll = scheduleTabsContainer.scrollLeft;
+      leftArrow.style.opacity = currentScroll > 10 ? '1' : '0';
+      rightArrow.style.opacity = currentScroll < maxScroll - 10 ? '1' : '0';
+    }
+
+    if (scheduleTabsContainer) {
+      scheduleTabsContainer.addEventListener('scroll', updateScrollArrows);
+      updateScrollArrows();
+    }
+  </script>
+</body>
+</html>
